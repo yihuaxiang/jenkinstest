@@ -15,7 +15,7 @@ pipeline {
                     fi
                     echo "handle old process done"
                 '''
-                sh 'nohup java -jar target/firstjob-0.0.1-SNAPSHOT.jar > /dev/null 2>71 &'
+                sh 'nohup java -jar target/firstjob-0.0.1-SNAPSHOT.jar > /dev/null 2>&1 &'
             }
         }
     }
