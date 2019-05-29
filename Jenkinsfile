@@ -6,7 +6,8 @@ pipeline {
                 sh 'mvn clean package'
                 sh '''
                     echo "handle old java process ... "
-                    pid=`ps aux | grep java | grep firstjob | awk "{print $2}"`
+                    pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $2}"`
+                    echo "pid is $pid"
 
                     if [[ ! -z $pid ]]
                     then
