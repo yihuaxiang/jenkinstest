@@ -6,6 +6,7 @@ pipeline {
                 sh 'mvn clean package'
                 sh '''
                     echo "handle old java process ... "
+                    ps aux | grep java | grep firstjob | grep -v jenkins
                     pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $2}"`
                     echo "pid is $pid"
 
