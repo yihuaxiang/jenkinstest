@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo "hello world"'
-                sh 'pwd'
-                sh 'ls -al'
+                sh 'mvn clean package'
+                sh 'java -jar target/firstjob-0.0.1-SNAPSHOT.jar'
             }
         }
     }
