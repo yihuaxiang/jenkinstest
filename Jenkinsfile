@@ -11,7 +11,7 @@ pipeline {
                     then
                         kill -9 $pid
                     fi
-                ''
+                '''
                 sh 'java -jar target/firstjob-0.0.1-SNAPSHOT.jar'
             }
         }
