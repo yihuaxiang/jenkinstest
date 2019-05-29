@@ -8,13 +8,16 @@ pipeline {
                     echo "handle old java process ... "
                     xx='$2'
                     echo `ps aux | grep java | grep firstjob | grep -v jenkins`
-                    pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $xx}"`
-                    echo "pid is $pid"
+                    pinfo=`ps aux | grep java | grep firstjob | grep -v jenkins`
+                    echo "pinfo is $pinfo"
 
-                    if [[ ! -z $pid ]]
+                    #pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $xx}"`
+                    #echo "pid is $pid"
+
+                    if [[ ! -z $pinfo ]]
                     then
-                        echo "kill pid $pid"
-                        kill -9 $pid
+                        echo "kill pid $pinfo"
+                        kill -9 $info
                     fi
                     echo "handle old process done"
                 '''
