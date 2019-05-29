@@ -5,6 +5,9 @@ pipeline {
             steps {
                 sh 'mvn --version'
             }
+            steps {
+                sh 'echo "hello world"'
+            }
         }
     }
 }
