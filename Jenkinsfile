@@ -18,6 +18,10 @@ pipeline {
                     echo "handle old process done"
                 '''
                 sh 'nohup java -jar target/firstjob-0.0.1-SNAPSHOT.jar &'
+                sh '''
+                    pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $2}"`
+                    echo "java pid is $pid"
+                '''
             }
         }
     }
