@@ -7,7 +7,7 @@ pipeline {
                 sh '''
                     echo "handle old java process ... "
                     echo `ps aux | grep java | grep firstjob | grep -v jenkins`
-                    pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $2}"`
+                    pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print \$2}"`
                     echo "pid is $pid"
 
                     if [[ ! -z $pid ]]
