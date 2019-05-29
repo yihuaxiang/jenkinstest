@@ -11,13 +11,10 @@ pipeline {
                     pinfo=`ps aux | grep java | grep firstjob | grep -v jenkins`
                     echo "pinfo is $pinfo"
 
-                    #pid=`ps aux | grep java | grep firstjob | grep -v jenkins | awk "{print $xx}"`
-                    #echo "pid is $pid"
-
                     if [[ ! -z $pinfo ]]
                     then
                         echo "kill pid $pinfo"
-                        kill -9 $info
+                        kill -9 $pinfo
                     fi
                     echo "handle old process done"
                 '''
