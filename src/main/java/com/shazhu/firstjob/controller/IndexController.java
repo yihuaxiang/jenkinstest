@@ -17,6 +17,6 @@ public class IndexController {
 
     @RequestMapping("/welcome")
     public String welcome(){
-        return "welcome from raspi";
+        return "welcome from raspi.";
     }
 }
