@@ -1,5 +1,5 @@
-
-pid=`ps axu | grep java | grep SNAPSHOT | awk \'{print $2}\'`
+#!/bin/bash
+pid=`ps axu | grep java | grep SNAPSHOT | awk '{print $2}'`
 echo "pid is $pid"
 if [[ ! -z $pid ]]
     then
