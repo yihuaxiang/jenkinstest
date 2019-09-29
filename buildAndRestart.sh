@@ -8,4 +8,4 @@ fi
 
 mvn clean package
 
-java -jar target/firstjob-0.0.1-SNAPSHOT.jar
+nohup java -jar target/firstjob-0.0.1-SNAPSHOT.jar 2&>1 &
